@@ -1,0 +1,25 @@
+// TODO Not mobile-responsive yet
+
+@controls-background: #deebf7;
+@controls-color: #1c4b77;
+
+.controls-outer
+{
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    right: 0;
+    width: 400px;
+    height: 70%;
+    
+    .controls
+    {
+        position: absolute;
+        background: @controls-background;
+        color: @controls-color;
+        border-radius: 10px;
+        padding: 10px;
+        height: ~"calc(100% - 2 * 10px)";
+        width: ~"calc(100% - 2 * 10px)";
+    }
+}

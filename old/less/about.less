@@ -1,0 +1,84 @@
+@about-background: #1c4b77;
+@about-color: #ffffff;
+@about-transition-time: 1.0s;
+
+.about
+{
+    background: @about-background;
+    color: @about-color;
+    font-size: 1.25em;
+    padding: 2em;
+    text-align: justify;
+    
+    header
+    {
+        text-align: center;
+        
+        h1
+        {
+            font-size: 4em;
+            text-transform: uppercase;
+        }
+        
+        p
+        {
+            .font-title();
+            
+            font-size: 2em;
+        }
+    }
+    
+    .about-toggle
+    {
+        display: none;
+    }
+    
+    @media (min-width: 992px)
+    {
+        bottom: 0;
+        font-size: 1em;
+        height: 100%;
+        left: 0;
+        padding: 2em;
+        position: fixed;
+        transition: left @about-transition-time;
+        width: 300px;
+        
+        .about-toggle
+        {
+            background: @about-background;
+            border: 2px solid @about-color;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px @about-background;
+            color: @about-color;
+            display: block;
+            height: 40px;
+            right: -20px;
+            line-height: 40px;
+            margin: 0;
+            outline: none;
+            padding: 0;
+            position: absolute;
+            bottom: 50%;
+            width: 40px;
+            
+            .glyphicon
+            {
+                display: block;
+                transition: transform @about-transition-time;
+            }
+        }
+        
+        &.about-closed
+        {
+            left: -276px;
+            transition: left @about-transition-time;
+            
+            .about-toggle .glyphicon
+            {
+                transform: rotate(180deg);
+                transition: transform @about-transition-time;
+            }
+        }
+    }
+}

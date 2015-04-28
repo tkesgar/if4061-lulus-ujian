@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Bootstrap 101 Template</title>
+
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Oxygen+Mono|Fjalla+One|Oxygen:300,400,700">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+
+  </head>
+  <body>
+
+    <section class="about about-closed">
+        <header>
+          <h1 class="title">Strategi Sukses Ujian:</h1>
+          <p class="subtitle">Kenali Soalmu!</p>
+        </header>
+        <p>Salah satu parameter penilaian dalam perkuliahan di Teknik Informatika ITB adalah Ujian Tengah Semester (UTS) dan Ujian Akhir Semester (UAS).</p>
+        <p>Banyak informasi menarik yang bisa didapat dengan mengenali pola soal ujian pada setiap tahunnya. Informasi tersebut tentunya dapat digunakan untuk menyusun strategi saat belajar. Jadi, tunggu apa lagi, kenali soalmu dan susun strategimu!</p>
+      <button class="about-toggle">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+      </button>
+    </section>
+
+    <div class="legend legend-closed">
+      <h3>Keterangan</h3>
+      <img src="img/legend.png">
+      <button class="legend-toggle">
+        <span class="glyphicon glyphicon-chevron-down"></span>
+      </button>
+    </div>
+
+    <div class="content">
+      <div id="content-hover">
+        <p>Soal analisis: <span id="hover-a"></span></p>
+        <p>Soal campuran: <span id="hover-g"></span></p>
+        <p>Soal teori: <span id="hover-t"></span></p>
+      </div>
+
+      <!-- diisi dari heatmap.json -->
+    </div>
+
+    <div class="controls-outer">
+		<div class="controls">
+			<div>
+				<p> UJIAN </p>
+				<div class="checkbox-inline">
+				  <label><input type="checkbox" value="">UTS</label>
+				</div>
+				<div class="checkbox-inline">
+				  <label><input type="checkbox" value="">UAS</label>
+				</div>
+			</div>
+			<div>
+				<p> Tahun </p>			
+				<div class="checkbox">
+				  <label><input type="checkbox" value="">2009</label>
+				</div>
+				<div class="checkbox">
+				  <label><input type="checkbox" value="">2010</label>
+				</div>
+				<div class="checkbox">
+				  <label><input type="checkbox" value="">2011</label>
+				</div>
+				<div class="checkbox">
+				  <label><input type="checkbox" value="">2012</label>
+				</div>
+							<div class="checkbox">
+				  <label><input type="checkbox" value="">2013</label>
+				</div>
+			</div>
+			<div>
+				<p>Mata Kuliah</p>
+				<select multiple class="form-control">
+				  <option>IF1210</option>
+				  <option>IF2120</option>
+				  <option>IF2121</option>
+				  <option>IF2112</option>
+				  <option>IF2130</option>
+				  <option>IF2211</option>
+				  <option>IF2220</option>
+				  <option>IF2230</option>
+				  <option>IF2240</option>
+				  <option>IF2250</option>
+				  <option>IF3170</option>
+				</select>
+			</div>
+
+		</div>
+    </div>
+
+    <div class="trivia">
+      <div id="carousel-trivia" class="carousel slide" data-ride="carousel">
+
+        <div class="carousel-inner" role="listbox">
+          <!-- diisi dari trivia.json -->
+        </div>
+
+        <!-- kontrol kiri-kanan dari Bootstrap -->
+        <a class="left carousel-control" href="#carousel-trivia" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-trivia" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+
+      </div>
+    </div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script2.js"></script>
+  </body>
+</html>
