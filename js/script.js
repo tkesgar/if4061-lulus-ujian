@@ -9,7 +9,7 @@ $(document).ready(function() {
   "use strict";
 
   // memasukkan data trivia.json ke carousel
-  $.getJSON("json/trivia.json", function(trivia) {
+  $.getJSON("data/trivia.json", function(trivia) {
 
     $.each(trivia, function(key, val) {
       $("#carousel-trivia .carousel-inner")
@@ -26,7 +26,7 @@ $(document).ready(function() {
   });
 
   // memasukkan data heatmap.json ke content
-  $.getJSON("json/heatmap.json", function(heatmap) {
+  $.getJSON("data/heatmap.json", function(heatmap) {
 
     // loop tiap mata kuliah
     $.each(heatmap, function(m, matkul) {
