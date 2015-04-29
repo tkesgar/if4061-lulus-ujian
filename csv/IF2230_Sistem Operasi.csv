@@ -1,0 +1,64 @@
+materi,ujian,tahun,semester,teori,campuran,analisis
+Konsep Dasar,UTS,2009,1,1,0,0
+Scheduling,UTS,2009,1,1,0,0
+Process & IPC,UTS,2009,1,0,0,1
+Memory & Paging,UTS,2009,1,0,1,1
+Process & IPC,UAS,2009,1,0,0,1
+Memory & Paging,UAS,2009,1,0,0,1
+Storage & I/O System,UAS,2009,1,1,0,1
+File System,UAS,2009,1,1,0,0
+OS Security,UAS,2009,1,0,0,1
+Konsep Dasar,UTS,2010,1,1,0,0
+Scheduling,UTS,2010,1,0,0,1
+Deadlock & Starvation,UTS,2010,1,0,0,1
+Process & IPC,UTS,2010,1,1,0,1
+Thread,UTS,2010,1,2,0,0
+Memory & Paging,UTS,2010,1,0,1,2
+Memory & Paging,UAS,2010,1,0,0,2
+Storage & I/O System,UAS,2010,1,1,0,1
+OS Security,UAS,2010,1,1,0,0
+Konsep Dasar,UTS,2011,1,999,999,999
+Scheduling,UTS,2011,1,999,999,999
+Deadlock & Starvation,UTS,2011,1,999,999,999
+Process & IPC,UTS,2011,1,999,999,999
+Thread,UTS,2011,1,999,999,999
+Sinkronisasi,UTS,2011,1,999,999,999
+Memory & Paging,UTS,2011,1,999,999,999
+Storage & I/O System,UTS,2011,1,999,999,999
+File System,UTS,2011,1,999,999,999
+OS Security,UTS,2011,1,999,999,999
+Konsep Dasar,UAS,2011,1,1,0,0
+Deadlock & Starvation,UAS,2011,1,1,0,0
+Storage & I/O System,UAS,2011,1,0,1,0
+File System,UAS,2011,1,0,0,1
+OS Security,UAS,2011,1,1,0,0
+Konsep Dasar,UTS,2012,1,1,0,0
+Scheduling,UTS,2012,1,0,0,1
+Deadlock & Starvation,UTS,2012,1,0,1,0
+Process & IPC,UTS,2012,1,1,0,0
+Thread,UTS,2012,1,1,0,0
+Sinkronisasi,UTS,2012,1,0,0,1
+Memory & Paging,UAS,2012,1,0,1,0
+Storage & I/O System,UAS,2012,1,0,1,0
+File System,UAS,2012,1,0,1,0
+OS Security,UAS,2012,1,0,1,0
+Konsep Dasar,UTS,2013,1,999,999,999
+Scheduling,UTS,2013,1,999,999,999
+Deadlock & Starvation,UTS,2013,1,999,999,999
+Process & IPC,UTS,2013,1,999,999,999
+Thread,UTS,2013,1,999,999,999
+Sinkronisasi,UTS,2013,1,999,999,999
+Memory & Paging,UTS,2013,1,999,999,999
+Storage & I/O System,UTS,2013,1,999,999,999
+File System,UTS,2013,1,999,999,999
+OS Security,UTS,2013,1,999,999,999
+Konsep Dasar,UAS,2013,1,999,999,999
+Scheduling,UAS,2013,1,999,999,999
+Deadlock & Starvation,UAS,2013,1,999,999,999
+Process & IPC,UAS,2013,1,999,999,999
+Thread,UAS,2013,1,999,999,999
+Sinkronisasi,UAS,2013,1,999,999,999
+Memory & Paging,UAS,2013,1,999,999,999
+Storage & I/O System,UAS,2013,1,999,999,999
+File System,UAS,2013,1,999,999,999
+OS Security,UAS,2013,1,999,999,999

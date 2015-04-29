@@ -1,0 +1,120 @@
+// mixin untuk heatmap satu warna
+.heat-single(@color)
+{
+    background: @color;
+}
+
+// mixin untuk heatmap dua warna
+.heat-dual(@color1, @color2)
+{
+    background: linear-gradient(
+        @angle-heatmap-dual,
+        @color1 0%,
+        @color1 50%,
+        @color2 50%,
+        @color2 100%
+    );
+}
+
+.heatmap-list
+{
+    margin: 0;
+    padding: 0;
+}
+
+.heatmap
+{
+    padding: 2em 0;
+    
+    h1
+    {
+        text-align: center;
+    }
+    
+    table
+    {
+        empty-cells: show;
+        font-size: 0.85em;
+        table-layout: fixed;
+        margin: 0 auto;
+        
+        // ukuran dari satu kotak
+        tr:first-child th, td
+        {
+            width: 50px;
+            height: 40px;
+            
+            &:first-child
+            {
+                width: 200px;
+            }
+        }
+        
+        th
+        {
+            text-align: center;
+        }
+        
+        thead tr:first-child th:nth-child(2),
+        th:nth-child(5),
+        td:nth-child(6)
+        {
+            border-right: 10px solid #ffffff;
+        }
+        
+        th, td
+        {
+            &.hide-row
+            {
+                background: transparent;
+                color: transparent;
+                width: 50px;
+                height: 40px;
+            }
+            
+            &.hide-ujian
+            {
+                background: transparent;
+                color: transparent;
+                width: 50px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+// Bootstrap popover
+.popover
+{
+    .font-content();
+    font-size: 0.9em;
+}
+
+// span untuk warna-warna di popover
+.color-a1 { color: @ca1; }
+.color-a2 { color: @ca2; }
+.color-a3 { color: @ca3; }
+.color-a4 { color: @ca4; }
+.color-c1 { color: @cc1; }
+.color-c2 { color: @cc2; }
+.color-c3 { color: @cc3; }
+.color-c4 { color: @cc4; }
+.color-t1 { color: @ct1; }
+.color-t2 { color: @ct2; }
+.color-t3 { color: @ct3; }
+.color-t4 { color: @ct4; }
+
+// heat-nil untuk data tidak ada
+.heat-nil
+{
+    .heat-single(repeating-linear-gradient(
+        @angle-heatmap-nil,
+        @color-heatmap-nil 0px,
+        @color-heatmap-nil 2px,
+        transparent        2px,
+        transparent        5px
+    ));
+}
+
+// import untuk heat.less (digenerate oleh generate-heat-less.py)
+@import "_heat.less";
