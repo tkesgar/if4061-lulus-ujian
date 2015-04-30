@@ -1,0 +1,108 @@
+@content-hover-background: #1c4b77;
+@content-hover-color: #ffffff;
+
+// TODO Not mobile-responsive yet
+
+.content
+{
+    z-index: -1000;
+    position: fixed;
+    top: 0;
+    left: 30px;
+    width: ~"calc(100% - 400px - 30px)";
+    height: 100%;
+    overflow: scroll;
+}
+
+#content-hover
+{
+    background: @content-hover-background;
+    color: @content-hover-color;
+    padding: 1em;
+    position: fixed;
+    z-index: 4000;
+}
+
+.heatmap
+{
+    h1
+    {
+        margin-left: 16%;
+    }
+    
+    .heatmap-table
+    {
+        empty-cells: show;
+        font-size: 0.9em;
+        margin: 0 auto;
+        table-layout: fixed;
+        
+        th
+        {
+            text-align: center;
+        }
+        
+        th, td
+        {
+            width: 50px;
+            height: 35px;
+        }
+        
+        thead tr:first-child,
+        tbody
+        {
+            & th:first-child
+            {
+                width: 120px;
+            }
+        }
+        
+        thead tr:first-child th:nth-child(2),
+        th:nth-child(5),
+        td:nth-child(6)
+        {
+            border-right: 2px solid #1c4b77;
+        }
+    }
+}
+
+// =======================================================================================
+//   Bagian Generate .heat-XYZ
+// =======================================================================================
+
+.heat-single(@color)
+{
+    background: @color;
+}
+
+.heat-dual(@color1, @color2)
+{
+    background: linear-gradient(35deg, @color1 0%, @color1 49%, @color2 51%, @color2 100%);
+}
+
+@ca1: #69c2ff;
+@ca2: #0d9dff;
+@ca3: #007fd6;
+@ca4: #005fa0;
+@cg1: #ec7dff;
+@cg2: #dc0dff;
+@cg3: #b700d6;
+@cg4: #8900a0;
+@ct1: #ff6969;
+@ct2: #ff2d2d;
+@ct3: #d60000;
+@ct4: #a00000;
+
+// import file heat.less yang digenerate
+.heat-nil
+{
+    .heat-single(repeating-linear-gradient(
+        45deg,
+        #1c4b77 0px,
+        #1c4b77 1.5px,
+        #ffffff 2px,
+        #ffffff 3.5px,
+        #1c4b77 4px
+    ));
+}
+@import "heat.less";
