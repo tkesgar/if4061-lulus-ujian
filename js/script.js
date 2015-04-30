@@ -9,7 +9,7 @@ $(document).ready(function() {
   "use strict";
 
   // memasukkan data trivia.json ke carousel
-  $.getJSON("data/trivia.json", function(trivia) {
+  $.getJSON("json/trivia.json", function(trivia) {
 
     $.each(trivia, function(key, val) {
       $("#carousel-trivia .carousel-inner")
@@ -26,7 +26,7 @@ $(document).ready(function() {
   });
 
   // memasukkan data heatmap.json ke content
-  $.getJSON("data/heatmap.json", function(heatmap) {
+  $.getJSON("json/heatmap.json", function(heatmap) {
 
     // loop tiap mata kuliah
     $.each(heatmap, function(m, matkul) {
@@ -289,16 +289,16 @@ var chart = c3.generate({
     data: {
         x: 'x',
         columns: [
-            ['x', 'IF2121', 'IF2122', 'IF2120', 'IF2130', 'IF2240', 'IF2250', 'IF2230', 'IF2220', 'IF2221', 'IF3170'],
+            ['x', 'IF2121 Logif', 'IF2122 Probstat', 'IF2120 Matdis', 'IF2130 Orkom', 'IF2240 Basdat', 'IF2250 DRPL', 'IF2230 OS', 'IF2220 TBFO', 'IF2211 Stima', 'IF3170 AI'],
             ['Analisis', 0.96, 1.0, 0.9865, 0.4483, 0.7429, 0.51, 0.4146, 1.0, 0.9643, 0.6591],
             ['Teori', 0.04, 0.0, 0.0135, 0.5517, 0.2571, 0.49, 0.3902, 0.0, 0.0357, 0.1136],
             ['Gabungan', 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1951, 0.0, 0.0, 0.2273]
         ],
         type: 'bar',
         colors: {
-            Analisis: '#007fd6',
-            Teori: '#d60000',
-            Gabungan: '#b700d6'
+            Analisis: '#0e9cfe',
+            Teori: '#ff2f25',
+            Gabungan: '#db0bff'
         },
         groups: [
             ['Analisis', 'Teori', 'Gabungan']
@@ -308,6 +308,9 @@ var chart = c3.generate({
                 y: d3.format("%")
             }
         },
+    },
+    legend: {
+        position: 'right'
     },
     bar: {
         width: {
@@ -322,6 +325,10 @@ var chart = c3.generate({
             max: 0.99,
             tick: {
                 format: d3.format("%")
+            },
+            label: {
+              text: 'Persentase Jumlah Soal',
+              position: 'outer-middle'
             }
         }
     }

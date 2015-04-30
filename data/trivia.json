@@ -1,0 +1,34 @@
+[
+  {
+    "isi": "Jumlah soal yang disimpan", 
+    "judul": "85"
+  }, 
+  {
+    "isi": "Jumlah soal yang digunakan di visualisasi data ini", 
+    "judul": "533"
+  }, 
+  {
+    "isi": "Persentase soal yang merupakan soal analisis", 
+    "judul": "74,86%"
+  }, 
+  {
+    "isi": "Rata-rata jumlah soal pada UTS dan UAS", 
+    "judul": "6"
+  }, 
+  {
+    "isi": "Mata kuliah dengan jumlah soal teori terbanyak", 
+    "judul": "IF2250"
+  }, 
+  {
+    "isi": "Mata kuliah dengan jumlah soal analisis terbanyak", 
+    "judul": "IF2122 & IF2230"
+  }, 
+  {
+    "isi": "Mata kuliah dengan jumlah soal gabungan terbanyak", 
+    "judul": "IF3170"
+  }, 
+  {
+    "isi": "Mata kuliah dengan jumlah soal teori, analisis, dan gabungan yang paling seimbang", 
+    "judul": "IF2230"
+  }
+]
