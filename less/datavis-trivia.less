@@ -1,0 +1,59 @@
+
+#carousel-trivia
+{
+    height: 100%;
+    
+    .carousel-inner,
+    .item
+    {
+        height: 100%;
+    }
+        
+    .item
+    {
+        z-index: -100;
+        
+        h3
+        {
+            color: @color-trivia-title;
+            font-size: 2.5em;
+            text-shadow: none;
+        }
+        
+        p
+        {
+            color: @color-trivia-content;
+            font-size: 1em;
+            text-shadow: none;
+        }
+    }
+        
+    .carousel-control
+    {
+        color: @color-trivia-arrow;
+        opacity: 1.0;
+        text-shadow: none;
+        transition: text-shadow 0.5s;
+        
+        &.left
+        {
+            background: linear-gradient(to right, white, transparent);
+        }
+        
+        &.right
+        {
+            background: linear-gradient(to left, white, transparent);
+        }
+        
+        & .glyphicon
+        {
+            font-size: 1em;
+        }
+        
+        &:hover,
+        &:active
+        {
+            text-shadow: 0px 0px 10px lighten(@color-trivia-arrow-shadow, 25%);
+        }
+    }
+}

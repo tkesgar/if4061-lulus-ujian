@@ -1,0 +1,58 @@
+#datavis
+{
+    // Set ukuran sesuai satu layar
+    width: 100%;
+    height: 100%;
+    
+    // Hilangkan space dari elemen Bootstrap
+    .container-fluid, .row, [class*="col"]
+    {
+        margin: 0;
+        padding: 0;
+    }
+    
+    // Height harus mengikuti parentnya
+    .container-fluid, .row, [class*="col"]
+    {
+        height: 100%;
+    }
+    
+    [class*="col"]
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.datavis-content
+{
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.datavis-control
+{
+    padding: 1em;
+    width: 100%;
+    height: 67%;
+    
+    .datavis-control-inner
+    {
+        border-radius: 2em;
+        padding: 2em;
+        
+        width: 100%;
+        height: 100%;
+        
+        background: @color-control-background;
+    }
+}
+
+.datavis-trivia
+{
+    width: 100%;
+    height: 33%;
+}
