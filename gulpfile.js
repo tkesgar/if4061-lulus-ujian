@@ -1,72 +1,74 @@
 var
-  // plugin untuk less
-  autoprefixer = require("less-plugin-autoprefix"),
-  cleancss     = require("less-plugin-clean-css"),
-
   // modul npm
   browsersync  = require('browser-sync'),
   del          = require('del'),
   gulp         = require('gulp'),
-
-  // modul gulp
+  
+  // plugin gulp
+  autoprefixer = require("gulp-autoprefixer"),
   concat       = require('gulp-concat'),
   less         = require('gulp-less'),
-  uglifyjs     = require('gulp-uglifyjs');
+  minifycss    = require("gulp-minify-css"),
+  sourcemaps   = require('gulp-sourcemaps'),
+  uglify       = require('gulp-uglify'),
+  util         = require('gulp-util'),
+  
+  // files
+  files = {
+    assets  : ['./assets/**'],
+    js      : ['./js/*.js'],
+    less    : ['./less/*.less']
+  };
 
-gulp
+// copy assets
+gulp.task('assets', function() {
+  return gulp.src(files.assets).pipe(gulp.dest('./public'));
+});
 
-// menyalin assets
-.task('assets', function() {
-  return gulp.src(['assets/**'])
-    .pipe(gulp.dest('public'))
-})
-
-// menggabungkan js menjadi satu file lalu di-uglify
-.task('scripts', function() {
-  return gulp.src(['js/*.js'])
+// "compile" js
+gulp.task('js', function() {
+  return gulp.src(files.js)
+    .pipe(sourcemaps.init())
+    .pipe(uglify())
     .pipe(concat('script.js'))
-    .pipe(uglifyjs())
-    .pipe(gulp.dest('public/js'));
-})
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./public/js'));
+});
 
-// mengkompilasi less (_nama.less tidak dikompilasi)
-.task('styles', function() {
-  return gulp.src(['less/*.less', '!less/_*.less'])
-    .pipe(less({
-      plugins: [new autoprefixer(), new cleancss()]
-    }))
-    .pipe(gulp.dest('public/css'));
-})
+// compile less
+gulp.task('less', function() {
+  return gulp.src(files.less)
+    .pipe(sourcemaps.init())
+    .pipe(less())
+    .pipe(autoprefixer())
+    .pipe(minifycss())
+    .pipe(sourcemaps.write('./'))
+    .pipe(gulp.dest('./public/css'));
+});
 
 // clean task
-.task('clean', function() {
-  del.sync(['public/**']);
-  return;
-})
+gulp.task('clean', function(f) {
+  del(['./public/**/*'], f);
+});
 
 // build task
-.task('build', ['assets', 'scripts', 'styles'])
+gulp.task('build', ['assets', 'js', 'less']);
 
 // serve task
-.task('serve', ['build'], function() {
-
-  // mulai browsersync
-  browsersync({
-    server: {
-      baseDir: 'public'
-    }
-  });
-
-  // watch jika file js berubah
-  gulp.watch(['js/*.js'], ['scripts']);
-
-  // watch jika file less berubah
-  gulp.watch(['less/*.less'], ['styles']);
-
-  // watch jika file tertentu di public berubah
-  gulp.watch(['**.html', 'css/**', 'js/**', 'data/**', 'img/**'
-  ], { cwd: 'public' }, browsersync.reload);
-})
+gulp.task('serve', ['build'], function() {
+  
+  // browsersync
+  browsersync({ server: { baseDir: 'public' }});
+  
+  // jika file di public berubah, reload
+  gulp.watch('./public/**', browsersync.reload);
+  
+  // jika file build task berubah, reload
+  gulp.watch(files.assets, ['assets']);
+  gulp.watch(files.js,     ['js']);
+  gulp.watch(files.less,   ['less']);
+  
+});
 
 // default task
-.task('default', ['build']);
+gulp.task('default', ['build']);

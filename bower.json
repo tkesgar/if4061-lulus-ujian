@@ -1,10 +1,6 @@
 {
   "name": "if4061-lulus-ujian",
-  "version": "0.0.0",
   "homepage": "https://github.com/tkesgar/if4061-lulus-ujian",
-  "authors": [
-    "Ted Kesgar <t.kesgar@live.com>"
-  ],
   "license": "MIT",
   "ignore": [
     "**/.*",
@@ -17,6 +13,7 @@
     "bootstrap": "~3.3.4",
     "jquery": "~2.1.4",
     "c3": "~0.4.10",
-    "d3": "~3.5.5"
+    "d3": "~3.5.0",
+    "hogan": "~3.0.2"
   }
 }

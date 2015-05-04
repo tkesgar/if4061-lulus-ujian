@@ -1,17 +1,17 @@
 {
   "name": "if4061-lulus-ujian",
+  "homepage": "https://github.com/tkesgar/if4061-lulus-ujian",
+  "license": "MIT",
   "devDependencies": {
-    "browser-sync": "^1.9.2",
+    "browser-sync": "latest",
     "del": "latest",
     "gulp": "latest",
-    "gulp-concat": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "^2.5.2",
     "gulp-less": "latest",
-    "gulp-uglifyjs": "latest",
-    "less-plugin-autoprefix": "latest",
-    "less-plugin-clean-css": "latest"
-  },
-  "scripts": {
-    "heatmap": "python make_heatmap.py > assets/data/heatmap.json",
-    "trivia": "python make_trivia.py > assets/data/trivia.json"
+    "gulp-minify-css": "latest",
+    "gulp-sourcemaps": "latest",
+    "gulp-uglify": "latest",
+    "gulp-util": "^3.0.4"
   }
 }
