@@ -12,6 +12,7 @@
     "gulp-minify-css": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-uglify": "latest",
-    "gulp-util": "^3.0.4"
+    "gulp-util": "^3.0.4",
+    "wiredep": "^2.2.2"
   }
 }
