@@ -1,0 +1,142 @@
+// mixin untuk heatmap satu warna
+.heat-single(@color)
+{
+    background: @color;
+}
+
+// mixin untuk heatmap dua warna
+.heat-dual(@color1, @color2)
+{
+    background: linear-gradient(
+        @angle-heatmap-dual,
+        @color1 0%,
+        @color1 50%,
+        @color2 50%,
+        @color2 100%
+    );
+}
+
+.heatmap-list
+{
+    margin: 0;
+    padding: 0;
+}
+
+.heatmap
+{
+  list-style-type: none;
+  padding-bottom: 1em;
+    
+    h1
+    {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    table
+    {
+        empty-cells: show;
+        table-layout: fixed;
+        margin: 0 auto;
+        
+        // ukuran dari satu kotak
+        tr:first-child th, td
+        {
+            width: 50px;
+            height: 36px;
+            
+            &:first-child
+            {
+                width: 250px;
+            }
+        }
+        
+        th
+        {
+            text-align: center;
+        }
+        
+        thead tr:first-child th:nth-child(2),
+        th:nth-child(5),
+        td:nth-child(6)
+        {
+            border-right: 10px solid #ffffff;
+        }
+        
+        th, td
+        {
+          margin: 0;
+          padding: 0;
+          
+            &.hide-col, 
+            &.hide-ujian
+            {
+                background: transparent;
+                color: transparent;
+                width: 0;
+                height: 0;
+            }
+        }
+    }
+}
+
+// Bootstrap popover
+.popover
+{
+    .font-content();
+    font-size: 0.9em;
+}
+
+.datavis-control
+{
+  text-align: center;
+}
+
+@angle-heatmap-dual:            50deg;
+@angle-heatmap-nil:             50deg;
+@color-heatmap-nil:             @color-blue-dark;
+@color-heatmap-even-background: #fff;
+@color-heatmap-odd-background:  #eee;
+
+// warna-warna heatmap
+@ca1: #69c2ff;
+@ca2: #0d9dff;
+@ca3: #007fd6;
+@ca4: #005fa0;
+@cc1: #ec7dff;
+@cc2: #dc0dff;
+@cc3: #b700d6;
+@cc4: #8900a0;
+@ct1: #ff6969;
+@ct2: #ff2d2d;
+@ct3: #d60000;
+@ct4: #a00000;
+
+// span untuk warna-warna di popover
+.color-a1 { color: @ca1; }
+.color-a2 { color: @ca2; }
+.color-a3 { color: @ca3; }
+.color-a4 { color: @ca4; }
+.color-c1 { color: @cc1; }
+.color-c2 { color: @cc2; }
+.color-c3 { color: @cc3; }
+.color-c4 { color: @cc4; }
+.color-t1 { color: @ct1; }
+.color-t2 { color: @ct2; }
+.color-t3 { color: @ct3; }
+.color-t4 { color: @ct4; }
+
+// heat-nil untuk data tidak ada
+.heat-nil
+{
+    .heat-single(repeating-linear-gradient(
+        @angle-heatmap-nil,
+        @color-heatmap-nil 0px,
+        @color-heatmap-nil 2px,
+        transparent        2px,
+        transparent        5px
+    ));
+}
+
+// import untuk heat.less (digenerate oleh generate-heat-less.py)
+@import "heat.less";

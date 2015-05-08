@@ -22,10 +22,15 @@ var
   };
 
 // copy assets + wiredep
-gulp.task('assets', function() {
+gulp.task('assets', ['wiredep'], function() {
   return gulp.src(files.assets)
-    .pipe(wiredep.stream())
     .pipe(gulp.dest('./public/'));
+});
+
+gulp.task('wiredep', function() {
+  return gulp.src('./assets/*.html')
+    .pipe(wiredep.stream())
+    .pipe(gulp.dest('./assets/'));
 });
 
 // "compile" js

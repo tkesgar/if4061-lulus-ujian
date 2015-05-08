@@ -9,6 +9,8 @@
     
     <!-- TODO Untuk production, ganti library CSS jadi Google Fonts + cdn.js -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/c3/c3.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
     <!-- endbower -->
     
     <link rel="stylesheet" type="text/css" href="main.css">
@@ -19,20 +21,103 @@
     <div class="viewport">
       <section id="overview" class="page container-fluid">
         <div class="row">
-          <div class="page-left col-xs-3">Overview left</div>
-          <div class="page-right col-xs-9">Overview right</div>
+          <div class="page-left col-xs-3">
+            <div class="top">
+              <h1>Strategi Sukses Ujian:<br><small>Kenali Soalmu!</small></h1>
+              <p>Salah satu parameter penilaian dalam perkuliahan di Teknik Informatika ITB adalah Ujian Tengah Semester (UTS) dan Ujian Akhir Semester (UAS).</p>
+              <p>Banyak informasi menarik yang bisa didapat dengan mengenali pola soal ujian pada setiap tahun. Informasi tersebut tentunya dapat digunakan untuk menyusun strategi saat belajar. Jadi, tunggu apa lagi, kenali soalmu dan susun strategimu!</p>
+            </div>
+            <div class="trivia">
+              
+              <div class="trivia-title">Trivia</div>
+              
+              <div id="carousel-trivia" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                  <!-- diisi dari trivia.json -->
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="page-right col-xs-9">
+            <h1>Persebaran Tipe Soal per Mata Kuliah</h1>
+            <div id="chart">
+              <!-- diisi oleh overview.js -->
+            </div>
+            <div id="chart-hover">
+              Klik untuk melihat detail dari <span id="nama-kuliah"></span>
+            </div>
+          </div>
         </div>
       </section>
       <section id="details" class="page down container-fluid">
         <div class="row">
-          <div class="page-left col-xs-3">Details left</div>
-          <div class="page-right col-xs-9">Details right</div>
+          <div class="page-left col-xs-3">
+            <h1>Tips</h1>
+            <div id="tips">
+              <!-- diisi oleh tips.js -->
+            </div>
+            <div class="legend-container">
+              <img src="img/legend.png" class="legend">
+            </div>
+          </div>
+          <div class="page-right col-xs-9">
+            <button class="btn btn-large btn-primary btn-back" onclick="toggleView()">
+              <span class="glyphicon glyphicon-chevron-left"></span> Kembali
+            </button>
+            <div id="heatmap-list">
+              <!-- diisi oleh heatmap.js -->
+            </div>
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-xs-2 control-label">Tahun</label>
+                <div class="col-xs-10">
+                  <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                      <input id="tahun0" type="checkbox" checked="checked">2009/2010
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="tahun1" type="checkbox" checked="checked">2010/2011
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="tahun2" type="checkbox" checked="checked">2011/2012
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="tahun3" type="checkbox" checked="checked">2012/2013
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="tahun4" type="checkbox" checked="checked">2013/2014
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-xs-2 control-label">Ujian</label>
+                <div class="col-xs-10">
+                  <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                      <input id="uts" type="checkbox" checked="checked">UTS
+                    </label>
+                    <label class="btn btn-primary active">
+                      <input id="uas" type="checkbox" checked="checked">UAS
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            </div>
+          </div>
         </div>
       </section>
     </div>
     
     <!-- TODO Untuk production, ganti library JS jadi cdn.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/c3/c3.js"></script>
+    <script src="bower_components/mustache.js/mustache.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     
     <script src="main.js"></script>

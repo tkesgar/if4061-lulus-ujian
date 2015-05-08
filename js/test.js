@@ -27,8 +27,9 @@ $(document).ready(function() {
   // contoh untuk ganti view atas/bawah kalau ditekan ctrl
   $(document).keydown(function(e) {
     console.log(e.keyCode);
-    if (e.keyCode === 17) {
+    if (e.keyCode === 8 && currentView === "details") {
       toggleView();
+      e.preventDefault();
     }
   });
   
