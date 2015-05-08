@@ -1,228 +1,125 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
   <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>Strategi Sukses Ujian di IF-ITB</title>
-
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Fjalla+One|Oxygen:300,400,700">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/c3.min.css">
-
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Kenali Soalmu: Strategi Sukses Lulus Ujian IF-ITB</title>
+    
+    <!-- TODO Untuk production, ganti library CSS jadi Google Fonts + cdn.js -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/c3/c3.css" />
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    
+    <link rel="stylesheet" type="text/css" href="main.css">
+    
   </head>
   <body>
-
-    <header class="jumbotron">
-      <div class="container">
-        <h1>Kenali Soalmu!<br><small>Strategi Sukses Ujian di IF-ITB</small></h1>
-        <p>Lebih dari <span class="large">533</span> soal diproses dan disajikan dengan visualisasi interaktif.</p>
-      </div>
-    </header>
-
-    <div style="padding: 4em 0; width: 960px; height:100%; margin: 0 auto;">
-        <h1 style="text-align:center;">Sekilas Pandang</h1>
-      <div id="chart"></div>
-    </div>
-
-<!--
-    <section id="overview-2" class="page">
-      <div class="container-fluid">
-        <img data-src="holder.js/400x400">
-        <h1>Overview 2</h1>
-        <p>Isi overview 2</p>
-      </div>
-    </section>
-
-    <section id="overview-3" class="page">
-      <div class="container-fluid">
-        <img data-src="holder.js/400x400">
-        <h1>Overview 3</h1>
-        <p>Isi overview 3</p>
-      </div>
-    </section>
-
-    <section id="overview-4" class="page">
-      <div class="container-fluid">
-        <img data-src="holder.js/400x400">
-        <h1>Overview 4</h1>
-        <p>Isi overview 4</p>
-      </div>
-    </section>
-
-    <section id="overview-5" class="page">
-      <div class="container-fluid">
-        <img data-src="holder.js/400x400">
-        <h1>Overview 5</h1>
-        <p>Isi overview 5</p>
-      </div>
-    </section>
--->
-    <section id="datavis">
-
-
-
-      <div class="container-fluid">
+    
+    <div class="viewport">
+      <section id="overview" class="page container-fluid">
         <div class="row">
-          <div class="col-xs-8">
-            <div class="datavis-content">
-              <ul class="heatmap-list">
-                <!-- diisi dari heatmap.json -->
-              </ul>
+          <div class="page-left col-xs-3">
+            <div class="top">
+              <h1>Strategi Sukses Ujian:<br><small>Kenali Soalmu!</small></h1>
+              <p>Salah satu parameter penilaian dalam perkuliahan di Teknik Informatika ITB adalah Ujian Tengah Semester (UTS) dan Ujian Akhir Semester (UAS).</p>
+              <p>Banyak informasi menarik yang bisa didapat dengan mengenali pola soal ujian pada setiap tahun. Informasi tersebut tentunya dapat digunakan untuk menyusun strategi saat belajar. Jadi, tunggu apa lagi, kenali soalmu dan susun strategimu!</p>
             </div>
-          </div>
-          <div class="col-xs-4">
-            <div class="datavis-control">
-
-              <div class="datavis-control-inner">
-                <div class="col-xs-6">
-                  <h3>Tahun</h3>
-                  <div align="left">
-                    <div class="checkbox">
-                      <label>
-                        <input id="tahun0" type="checkbox" checked> 2009/2010
-                      </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input id="tahun1" type="checkbox" checked> 2010/2011
-                      </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input id="tahun2" type="checkbox" checked> 2011/2012
-                      </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input id="tahun3" type="checkbox" checked> 2012/2013
-                      </label>
-                    </div>
-                    <div class="checkbox">
-                      <label>
-                        <input id="tahun4" type="checkbox" checked> 2013/2014
-                      </label>
-                    </div>
-                  </div>
-                  <h3>Ujian</h3>
-                  <div class="btn-group" data-toggle="buttons">
-                    <label class="btn btn-default active">
-                      <input id="uts" type="checkbox" checked="checked"> UTS
-                    </label>
-                    <label class="btn btn-default active">
-                      <input id="uas" type="checkbox" checked="checked"> UAS
-                    </label>
-                  </div>
-                </div>
-                <div class="col-xs-6">
-                  <h3>Mata Kuliah</h3>
-                  <div align="left">
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2120" type="checkbox" checked> IF2120
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2121" type="checkbox" checked> IF2121
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2122" type="checkbox" checked> IF2122
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2130" type="checkbox" checked> IF2130
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2211" type="checkbox" checked> IF2211
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2220" type="checkbox" checked> IF2220
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2230" type="checkbox" checked> IF2230
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2240" type="checkbox" checked> IF2240
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if2250" type="checkbox" checked> IF2250
-                    </label>
-                  </div>
-                  <div class="checkbox">
-                    <label>
-                      <input id="if3170" type="checkbox" checked> IF3170
-                    </label>
-                  </div>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <div class="datavis-trivia">
-
+            <div class="trivia">
+              
+              <div class="trivia-title">Trivia</div>
+              
               <div id="carousel-trivia" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner" role="listbox">
                   <!-- diisi dari trivia.json -->
                 </div>
-
-                <a class="left carousel-control" href="#carousel-trivia" role="button" data-slide="prev">
-                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                  <span class="sr-only">Sebelumnya</span>
-                </a>
-                <a class="right carousel-control" href="#carousel-trivia" role="button" data-slide="next">
-                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                  <span class="sr-only">Berikutnya</span>
-                </a>
-                </div>
-
               </div>
 
             </div>
           </div>
-        </div>
-      </div>
-
-
-          <div class="legend legend-closed">
-            <!--h3>Keterangan</h3-->
-            <img src="img/legend.png">
-            <button class="legend-toggle">
-              <span class="glyphicon glyphicon-chevron-down"></span>
-            </button>
+          <div class="page-right col-xs-9">
+            <h1>Persebaran Tipe Soal per Mata Kuliah</h1>
+            <div id="chart">
+              <!-- diisi oleh overview.js -->
+            </div>
+            <div id="chart-hover">
+              Klik untuk melihat detail dari <span id="nama-kuliah"></span>
+            </div>
           </div>
-    </section>
-
-    <footer>
-      <p>Dibuat dengan penuh canda dan tawa oleh <a href="#">@ariefrahman95</a>, <a href="#">@hotarufk</a>, <a href="#">@rifkiaputri</a>, dan <a href="#">@tkesgar</a>.</p>
-      <p>Data diambil dari <a href="#">Bundel Soal Teknik Informatika HMIF 2014</a>.</p>
-    </footer>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/jquery.sortable.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/d3.min.js"></script>
-    <script src="js/c3.min.js"></script>
-
-    <script src="js/holder.min.js"></script>
-    <script src="js/script.js"></script>
+        </div>
+      </section>
+      <section id="details" class="page down container-fluid">
+        <div class="row">
+          <div class="page-left col-xs-3">
+            <h1>Tips</h1>
+            <div id="tips">
+              <!-- diisi oleh tips.js -->
+            </div>
+            <div class="legend-container">
+              <img src="img/legend.png" class="legend">
+            </div>
+          </div>
+          <div class="page-right col-xs-9">
+            <button class="btn btn-large btn-primary btn-back" onclick="toggleView()">
+              <span class="glyphicon glyphicon-chevron-left"></span> Kembali
+            </button>
+            <div id="heatmap-list">
+              <!-- diisi oleh heatmap.js -->
+            </div>
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="col-xs-2 control-label">Tahun</label>
+                <div class="col-xs-10">
+                  <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default active">
+                      <input id="tahun0" type="checkbox" checked="checked">2009/2010
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="tahun1" type="checkbox" checked="checked">2010/2011
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="tahun2" type="checkbox" checked="checked">2011/2012
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="tahun3" type="checkbox" checked="checked">2012/2013
+                    </label>
+                    <label class="btn btn-default active">
+                      <input id="tahun4" type="checkbox" checked="checked">2013/2014
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="col-xs-2 control-label">Ujian</label>
+                <div class="col-xs-10">
+                  <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active">
+                      <input id="uts" type="checkbox" checked="checked">UTS
+                    </label>
+                    <label class="btn btn-primary active">
+                      <input id="uas" type="checkbox" checked="checked">UAS
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    
+    <!-- TODO Untuk production, ganti library JS jadi cdn.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/c3/c3.js"></script>
+    <script src="bower_components/mustache.js/mustache.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <!-- endbower -->
+    
+    <script src="main.js"></script>
   </body>
 </html>
